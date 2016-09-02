@@ -1,0 +1,33 @@
+{
+  "name": "@xch/node-remote-exec",
+  "version": "0.0.1",
+  "description": "Execute shell commands on remote machine through ssh for nodejs.",
+  "main": "src/remote-exec.js",
+  "scripts": {
+    "lint": "eslint src/*",
+    "gendoc": "jsdoc2md src/* > API.md",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://zodiase@github.com/Zodiase/node-remote-exec.git"
+  },
+  "keywords": [
+    "Node",
+    "Execute",
+    "SSH",
+    "Remote",
+    "Shell",
+    "Bash"
+  ],
+  "author": "Xingchen Hong",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Zodiase/node-remote-exec/issues"
+  },
+  "homepage": "https://github.com/Zodiase/node-remote-exec#readme",
+  "devDependencies": {
+    "eslint": "^3.4.0",
+    "jsdoc-to-markdown": "^1.3.7"
+  }
+}
