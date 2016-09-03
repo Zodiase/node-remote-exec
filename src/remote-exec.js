@@ -9,7 +9,9 @@ const fs = require('fs'),
  */
 function escq (cmd) {
 
-  return `'${Reflect.apply(String.prototype.replace, cmd, [/'/gm, "'\\''"])}'`;
+  const escaped = String.prototype.replace.call(cmd, /'/gm, "'\\''");
+
+  return `'${escaped}'`;
 
 }
 
@@ -29,7 +31,7 @@ function log (...args) {
   fs.appendFileSync(logFile, `${logString}\n`, 'utf8');
   if (toStdOut) {
 
-    Reflect.apply(console.log, console, args);
+    console.log(...args);
 
   }
 
@@ -64,7 +66,7 @@ function remoteExecSync (remote, cmd, options) {
         host = server.host || '127.0.0.1',
         user = server.user || 'root',
         domain = `${user}@${host}`,
-        cmdAry = Array.isArray(cmd) ? Reflect.apply(Array.prototype.slice, cmd, []) : [cmd],
+        cmdAry = Array.isArray(cmd) ? Array.prototype.slice.call(cmd) : [cmd],
         opts = typeof options === 'object' && options ? options : {},
         cmdDelimiter = ` && \\\n`;
 
@@ -126,4 +128,7 @@ function remoteExecSync (remote, cmd, options) {
 
 }
 
-module.exports.sync = remoteExecSync;
+module.exports = {
+  'sync': remoteExecSync,
+  escq
+};
