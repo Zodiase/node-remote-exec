@@ -1,6 +1,6 @@
 {
   "name": "@xch/node-remote-exec",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Execute shell commands on remote machine through ssh for nodejs.",
   "main": "dist/remote-exec.js",
   "scripts": {
