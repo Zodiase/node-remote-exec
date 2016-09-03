@@ -90,7 +90,7 @@ function remoteExecSync (remote, cmd, options) {
 
     // Write commands to the log file.
     log(`[${domain}]\$ ${nakedCmdString}`, opts.log, Boolean(opts.stdout));
-    cmdString = `(${cmdString}) \\\n| tee -a ${escq(opts.log)} ; test \${PIPESTATUS[0]} -eq 0`;
+    cmdString = `( ${cmdString} ) \\\n| tee -a ${escq(opts.log)} ; test \${PIPESTATUS[0]} -eq 0`;
 
   }
 
