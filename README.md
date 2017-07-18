@@ -1,6 +1,8 @@
 Execute Shell Commands on Remote Server
 ===============================================================================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Zodiase/node-remote-exec.svg)](https://greenkeeper.io/)
+
 Install
 -------------------------------------------------------------------------------
 ```Bash
